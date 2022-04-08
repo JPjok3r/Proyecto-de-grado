@@ -1,0 +1,40 @@
+extends layout
+
+block content
+    if title
+        h1= title
+    div(class="header-menu", id='header-menu-cuenta')
+            label=nameUser
+                ul(class='nav-cuenta')
+                    li
+                        img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                        ul
+                            li
+                                a(href="") Cuenta
+                            li
+                                a(href="/users/salir") Salir
+    section.lista_items_menu 
+        div(class="contenedor_lista", id="contenedor_lista")
+            div(class="listaMenu", id="listamenu")
+                table 
+                    thead 
+                        tr 
+                            th Nombre 
+                            th Categoría 
+                            th Disponibilidad
+                            th 
+                    tbody 
+                        each item in menu 
+                            tr 
+                                td= item.nombre 
+                                td= item.categoria 
+                                if item.disponible
+                                    td 
+                                        label(id="disp"+item.identi) Disponible
+                                else 
+                                    td 
+                                        label(id="disp"+item.identi) No disponible 
+                                td 
+                                    button(id="itemChange", onclick="itemCambiar('"+item._id+"', '"+item.identi+"')") Cambiar
+                button(class="btnatras")
+                    a(href="/pedidos/mostrar/lista") Volver 

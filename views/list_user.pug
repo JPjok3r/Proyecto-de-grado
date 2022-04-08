@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    if title
+        h1= title
+    div(class="header-menu", id='header-menu-cuenta')
+            label=user
+                ul(class='nav-cuenta')
+                    li
+                        img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                        ul
+                            li
+                                a(href="/") Inicio
+                            li
+                                a(href="/users/salir") Salir
+    section.lista_usuarios 
+        div(class="contenedor_lista")
+            div(class="lista")
+                if list 
+                    table 
+                        thead 
+                            tr 
+                                th Nombre 
+                                th Rol 
+                                th Celular 
+                                th C.I 
+                                th 
+                        tbody 
+                            each user in list 
+                                tr 
+                                    td= user.nombre 
+                                    td= user.rol 
+                                    td= user.celular 
+                                    td= user.cIdentidad 
+                                    td 
+                                        a(href="/administracion/usuario/" + user._id) Ver detalle 
+            button(class="btnatras")
+                a(href="/administracion") Volver  

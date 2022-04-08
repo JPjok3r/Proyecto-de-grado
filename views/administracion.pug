@@ -1,0 +1,52 @@
+extends layout
+
+block content
+    if title
+        h1 #{title}
+    div(class="header-menu", id='header-menu-cuenta')
+        label=user
+            ul(class='nav-cuenta')
+                li
+                    img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                    ul
+                        li
+                            a(href="/") Inicio
+                        li
+                            a(href="/users/salir") Salir
+    section.admin_contenedor
+        div(class="listar_usuarios")
+            a(href="/administracion/listar_usuarios")
+                img#listar_usuarios(src="/images/admin/users_list.jpg", alt="Listar Usuarios")
+            br
+            label(for="listar_usuarios")#action_name Lista de usuarios
+        div(class="new_users")
+            a(href="/administracion/nuevousuario")
+                img#nuevousuario(src="/images/admin/new_user.jpg", alt="Nuevo Usuario")
+            br
+            label(for="nuevousuario")#action_name Nuevo usuario
+        div(class="delete_user")
+            a(href="/administracion/eliminar_usuario")
+                img#deluser(src="/images/admin/delete_user.png", alt="Eliminar Usuario")
+            br
+            label(for="deluser")#action_name Eliminar usuario
+        div(class="gen_reporte")
+            a(href="/administracion/reportes")
+                img#reportes(src="/images/admin/reportes.png", alt="Reportes")
+            br
+            label(for="reportes")#action_name Reportes
+        br
+        div(class="gen_qrcode")
+            a(href="/administracion/generar_nuevoqr")
+                img#newqr(src="/images/admin/qrcode.png", alt="Nuevo QR Code")
+            br
+            label(for="newqr")#action_name Generar nuevo código QR
+        div(class="nuevo_menuitem")
+            a(href="/administracion/nuevo_menu_item")
+                img#menuitem(src="/images/admin/menu.jpg", alt="Nuevo Item de Menu")
+            br
+            label(for="menuitem")#action_name Agregar nuevo item al menú
+        div(class="datos_empresa")
+            a(href="/administracion/datos/empresa")
+                img#datose(src="/images/admin/datos-logo.png", alt="Guardar Datos de Empresa")
+            br
+            label(for="datose")#action_name Almacenar/Verificar datos del restaurante

@@ -1,0 +1,81 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src="/javascripts/pedidoslist.js") 
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", type="text/javascript") 
+        script(src="/javascripts/cargarfondos.js", type="text/javascript")
+        title= title 
+    body(id="background", onload="cargarFondo()")
+        h1= title 
+        div(class="header-menu", id='header-menu-cuenta')
+            label=nameUser
+                ul(class='nav-cuenta')
+                    li
+                        img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                        ul
+                            li
+                                a(href="/pedidos/cocina/admin/menu") Menu
+                            li
+                                a(href="/users/salir") Salir
+        div(class="pedidos_list", id="pedidos_list")
+            if pedidosL.length != 0
+                table(class="pedidos_locales")
+                    tr 
+                        th Tipo de Pedido 
+                        th Pedido 
+                        th Cliente
+                        th N° de Mesa 
+                        th Estado 
+                    -let index = 1
+                    each item in pedidosL
+                        if item.estado < 1
+                            tr 
+                                td
+                                    if item.tipoPedido == 0
+                                        label Local 
+                                    else 
+                                        label Domicilio/LLevar 
+                                td 
+                                    each det in item.detalle
+                                        label= det.cantidad + " "
+                                        label= det.item 
+                                        br
+                                td= item.cliente 
+                                td= item.numMesa
+                                td(id="chkstatefor"+item.n)
+                                    if item.estado == -1
+                                        button(id="btnestado"+item.n, onclick="cambiarEstado('"+item._id+"','"+item.n+"')") Pendiente 
+                                    else 
+                                        button(id="btnestado"+item.n, onclick="cambiarEstado('"+item._id+"','"+item.n+"')") Preparando 
+                                    -index++ 
+            if pedidosD.length != 0
+                table(class="pedidos_dom")
+                    tr 
+                        th Tipo de Pedido 
+                        th Pedido 
+                        th Cliente 
+                        th Estado 
+                    -let index = 1
+                    each item in pedidosD
+                        if item.estado < 1
+                            tr 
+                                td
+                                    if item.tipoPedido == 0
+                                        label Local 
+                                    else 
+                                        label Domicilio/LLevar 
+                                td 
+                                    each det in item.detalle
+                                        label= det.cantidad + " "
+                                        label= det.nombreItem 
+                                        br
+                                td= item.cliente
+                                td(id="chkstatefor"+item.n)
+                                    if item.estado == -1
+                                        button(id="btnestado"+item.n, onclick="cambiarEstado('"+item._id+"','"+item.n+"')") Pendiente 
+                                    else 
+                                        button(id="btnestado"+item.n, onclick="cambiarEstado('"+item._id+"','"+item.n+"')") Preparando 
+                                    -index++       

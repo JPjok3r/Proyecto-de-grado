@@ -1,0 +1,19 @@
+table.tableRep {  
+	width: 60%; 
+	margin-left: 7%;
+	margin-top: 3%;
+	border-collapse: collapse; 
+	font-family: 'Cabin';
+}
+table.tableRep th { 
+	background: #333; 
+	color: white; 
+	font-weight: bold; 
+}
+table.tableRep td, table.tableRep th { 
+	padding: 5px;
+	padding-left: 8px;
+	padding-right: 8px; 
+	border: 1px solid #ccc; 
+	text-align: center; 
+}

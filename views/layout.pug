@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", type="text/javascript") 
+    script(src="/javascripts/cargarfondos.js", type="text/javascript")
+    script(src="/javascripts/funciones.js", type="text/javascript") 
+  body(id="background", onload="cargarFondo()")
+    block content

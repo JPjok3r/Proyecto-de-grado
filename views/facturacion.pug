@@ -1,0 +1,68 @@
+div(class="PrintArea", id="printArea")
+	div(class="nombre-rest")
+		h3= datos.nombre 
+		label= datos.dir 
+		br
+		label= datos.telefono
+		br
+		label Cochabamba-Bolivia
+	div(class="datos-rest")
+		label NIT: 
+		label= datos.nitE 
+		br
+		label Factura N°: 
+		label= factura.nFactura 
+		br
+		label Autorización: 
+		label= datos.nAutorizacion 
+		br
+		label Restaurantes
+	div(class="titulo")
+		h1= title 
+	div(class="contenedor")
+		div(class="cont_fecha")
+			label LUGAR Y FECHA: Cochabamba, 
+			label= fechaF
+		div(class="cont-nit")
+			label NIT/CI: 
+			label= factura.nit 
+		br
+		div(class="cont_nombre")
+			label NOMBRE: 
+			label= factura.nombre
+		br
+		table(class="detalle", style="width:90%")
+			tr
+				th(style="width:10%") Cant.
+				th(style="width:60%") Detalle
+				th(style="width:15%") P. unit.
+				th(style="width:15%") Subtotal
+			each item in factura.detalle
+				tr
+					td= item.cantidad
+					td= item.item 
+					td= item.precioU
+					td= item.cantidad*item.precioU
+			tr(class="totalF") 
+				td(colspan="3", class="unidos3") TOTAL: 
+				td= factura.total.toFixed(2)
+	div(class="totalfra")
+		p= totalcad
+	div(class="facturaqr")
+		img(src=`/cajas/factura/qr/${factura._id}`, alt="qr-image", width="150px", height="150px", class="qr")
+	div(class="cod_control")
+		label Código de control: 
+		label= factura.codControl 
+		br
+		label Fecha limite de emisión: 
+		label DD/MM/AAAA
+		br
+	div(class="foot-bill")
+		label ***GRACIAS POR SU PREFERENCIA***
+		br
+		label "ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAIS EL USO ILÍCITO DE ESTA SERÁ SANCIONADO DE ACUERDO A LEY"
+		br
+		label Ley N°453. Tiene derecho a un trato equitativo sin discriminación en la oferta de servicios.
+	button(id="imp", onclick="printFactura()") Imprimir
+
+

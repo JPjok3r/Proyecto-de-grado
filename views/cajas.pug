@@ -1,0 +1,38 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(defer, src="/javascripts/caja.js") 
+        script(src="/javascripts/html5-qrcode.min.js")
+        script(type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js")
+        script(type="text/javascript" src="/javascripts/jQuery.print.js")
+        script(type="text/javascript" src="/javascripts/jquery.printarea.js") 
+    body(id='background', background="/images/fondos/fondo2.png")
+        div(class="container-cajas", id="container-cajas")
+            h1= title 
+            div(class="header-menu", id='header-menu-cuenta')
+                label=userNombre
+                    ul(class='nav-cuenta')
+                        li
+                            img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                            ul
+                                li
+                                    a(href="") Cuenta
+                                li
+                                    a(href="/users/salir") Salir
+            div(class="container-camcanvas", id="container-camcanvas")
+                div(class="btnobtCam")
+                    button(id="obtCamaras", onclick="obtenerCamaras()") Mostrar Camaras
+                div(id="reader", class="reader" width="600px")
+                    span(class="contenedor-imagen", id="contenedor-imagen")
+                        img(src="/images/cajas/camera-scan.gif", alt="ScanGif", class="camera-scan-image")
+                    br
+                    div(class="elemCamara")
+                        label(for="cameras") Dispositivo seleccionado:  
+                        br
+                        select#cameraselector(name="cameras")
+                        br 
+                        button(id="start_scan", onclick="scaner()") Escanear
+         
+

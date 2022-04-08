@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+        <title>Factura</title>
+		<link rel='stylesheet', href='http://192.168.0.111:3000/stylesheets/style.css'>
+        <meta charset="UTF-8">
+    </head>
+	<body>
+        <div class="PrintArea", id="printArea">
+            <div class="nombre-rest">
+                <h3> {{nombreEmpresa}} </h3>
+                <label> {{dirEmp}} </label>
+                <br>
+                <label> {{telfEmp}} </label>
+                <br>
+                <label> Cochabamba-Bolivia</label>
+            </div>
+            <div class="datos-rest">
+                <label> NIT: </label>
+                <label> {{nitEmp}} </label>
+                <br>
+                <label> Factura N°: </label>
+                <label> {{numFactura}} </label> 
+                <br>
+                <label> Autorización: </label>
+                <label> {{autEmp}} </label>
+            </div>
+            <div class="titulo">
+                <h1> Factura </h1>
+            </div>
+            <div class="contenedor">
+                <div class="cont_fecha">
+                    <label> FECHA: </label>
+                    <label> {{dateFact}}</label>
+                </div>
+                <div class="cont-nit">
+                    <label> NIT/CI: </label>
+                    <label> {{nitFact}} </label>
+                </div>
+                <br>
+                <div class="cont_nombre">
+                    <label> NOMBRE: </label>
+                    <label> {{nompFact}} </label>
+                </div>
+                <br>
+                <table class="detalle" style="width:90%">
+                    <thead> 
+                        <tr>
+                            <th style="width:10%"> Cant. </th>
+                            <th style="width:60%"> Detalle </th>
+                            <th style="width:15%"> P. unit. </th>
+                            <th style="width:15%"> Subtotal </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{contTablaF}}
+                        <tr class="totalF"> 
+                            <td colspan="3", class="unidos3"> TOTAL: </td>
+                            <td> {{totalFact}} </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="totalfra">
+                <p> {{totalCad}} </p>
+            </div>
+            <div class="facturaqr">
+                <img src="http://192.168.0.111:3000/clientes/factura/qr/{{facturaid}}" alt="qr-image" width="150px" height="150px" class="qr">
+            </div>
+            <div class="cod_control">
+                <label> Código de control: </label>
+                <label> {{codContFact}} </label>
+                <br>
+                <label> Fecha limite de emisión: </label>
+                <label> 21/12/2021</label>
+                <br>
+            </div>
+            <div class="foot-bill">
+                <label> ***GRACIAS POR SU PREFERENCIA***</label>
+                <br>
+                <label> "ESTA FACTURA CONTRIBUYE AL DESARROLLO DEL PAIS EL USO ILÍCITO DE ESTA SERÁ SANCIONADO DE ACUERDO A LEY"</label>
+                <br>
+                <label> Ley N°453. Tiene derecho a un trato equitativo sin discriminación en la oferta de servicios.</label>
+            </div>
+        </div>
+    </body>
+</html>

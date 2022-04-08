@@ -1,0 +1,24 @@
+div(class="form_datos_factura", id="form_datos_factura")
+    h2(class="titulo_form", id="titulo_form")= title_form 
+    br
+    form(action="", id="facturacion")
+        div(class="conten", id="conten")
+            if cliente.nit 
+                input(type="text", id="nit", name="nit", required, placeholder="NIT para factura", value=cliente.nit)
+            else 
+                input(type="text", id="nit", name="nit", required, placeholder="NIT para factura", onfocusout="obtenerDataClient()")
+            if cliente.nombre 
+                input(type="text", id="nombref", name="nombref", required, placeholder="Nombre del cliente", value=cliente.nombre)
+            else 
+                input(type="text", id="nombref", name="nombref", required, placeholder="Nombre del cliente")
+            if cliente.apellido 
+                input(type="text", id="apellido", name="apellido", required, placeholder="Apellido", value=cliente.apellido)
+            else 
+                input(type="text", id="apellido", name="apellido", required, placeholder="Apellido") 
+            label(class="form_datafact", id="datos_form") La factura irá con:
+            input(type="radio", id="showname", name="nom_factura", value="nombre")
+            label(for="showname") Nombre  
+            input(type="radio", id="showlastname", name="nom_factura", value="apellido" checked)
+            label(for="showlastname") Apellido
+            input(type="radio", id="showboth", name="nom_factura", value="ambos")
+            label(for="showboth") Ambos 

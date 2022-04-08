@@ -1,0 +1,63 @@
+extends layout
+
+block content
+    if title
+        h1= title
+    div(class="header-menu", id='header-menu-cuenta')
+            label=user
+                ul(class='nav-cuenta')
+                    li
+                        img(src="/images/otros/ButtonCuentaRojo.jpg", alt="Cuenta")
+                        ul
+                            li
+                                a(href="/") Inicio
+                            li
+                                a(href="/users/salir") Salir
+    if mensaje 
+        p(class="message")= mensaje 
+    if disabled === "true"
+        div(class="datosempresa", id="datosempresa")
+            div(class="form-datae", id="form-datae")
+                if datos
+                    form(action="/administracion/datos/empresa", id="datos_e", method="post")
+                        input(type="hidden", id="control", name="control", value="modificar")
+                        label(for="nombreE") Nombre del restaurante
+                        input(type="text", id="nombreE", name="nombreE", value=datos.nombre)  
+                        br
+                        label(for="dirE") Dirección
+                        input(type="text", id="dirE", name="dirE", value=datos.dir)
+                        br
+                        label(for="telfE") Teléfono 
+                        input(type="text", id="telfE", name="telfE", value=datos.telefono)
+                        br
+                        label(for="nitE") NIT
+                        input(type="text", id="nitE", name="nitE", value=datos.nitE)
+                        br
+                        label(for="nAuth") N° Autorización
+                        input(type="text", id="nAuth", name="nAuth", value=datos.nAutorizacion)
+                        br 
+                        button(type="submit", class="dataEmpSend") Guardar
+            button(id="volver", class="btnatras")
+                a(href="/administracion") Volver 
+    else 
+        div(class="datosempresa", id="datosempresa")
+            div(class="form-datae", id="form-datae")
+                p *Llene los datos con mucho cuidado y revise todos sus datos antes de guardarlos
+                form(action="/administracion/datos/empresa", id="datos_e", method="post")
+                    input(type="hidden", id="control", name="control", value="nuevo")
+                    label(for="nombreE") Nombre del restaurante
+                    input(type="text", id="nombreE", name="nombreE", placeholder="Ingrese nombre del restaurante")  
+                    br
+                    label(for="dirE") Dirección
+                    input(type="text", id="dirE", name="dirE", placeholder="Ingrese la dirección")
+                    br
+                    label(for="telfE") Teléfono 
+                    input(type="text", id="telfE", name="telfE", placeholder="Ingrese el teléfono")
+                    br
+                    label(for="nitE") NIT
+                    input(type="text", id="nitE", name="nitE", placeholder="Ingrese el NIT de registro de la empresa")
+                    br
+                    label(for="nAuth") N° Autorización
+                    input(type="text", id="nAuth", name="nAuth", placeholder="Ingrese el número de autorizción")
+                    br
+                    button(type="submit", class="dataEmpSend") Guardar

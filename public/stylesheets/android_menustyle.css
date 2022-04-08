@@ -1,0 +1,244 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin:400);
+
+body {
+    background-color: #282828;
+}
+
+#background{
+	background-size: cover;
+	/*background-size: 100% 100%;*/
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Inicio estilo para barra de menu */
+div.menubar {
+    width: max-content;
+    margin: 0 auto;
+}
+
+header
+{
+  display: block;
+  background-color: #333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#333));
+  background-image: -webkit-linear-gradient(top, #555, #333);
+  background-image: -moz-linear-gradient(top, #555, #333);
+  background-image: -ms-linear-gradient(top, #555, #333);
+  background-image: -o-linear-gradient(top, #555, #333);
+  background-image: linear-gradient(top, #555, #333);
+  -moz-box-shadow: 0 5px 5px #000;
+  -webkit-box-shadow: 0 5px 5px #000;
+  box-shadow: 0 5px 5px #000;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+div.header {
+    display: block;
+  background-color: #333;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#333));
+  background-image: -webkit-linear-gradient(top, #555, #333);
+  background-image: -moz-linear-gradient(top, #555, #333);
+  background-image: -ms-linear-gradient(top, #555, #333);
+  background-image: -o-linear-gradient(top, #555, #333);
+  background-image: linear-gradient(top, #555, #333);
+  -moz-box-shadow: 0 5px 5px #000;
+  -webkit-box-shadow: 0 5px 5px #000;
+  box-shadow: 0 5px 5px #000;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    float: left;
+}
+
+nav a{
+    float: left;
+    color: #eee;
+    margin: 0 5px;
+    padding: 3px;
+    text-decoration: none;
+    border: 1px solid #831608;
+    font: bold 14px Arial, Helvetica;
+    background-color: #831608;
+    background-image: linear-gradient(#bb413b, #831608);
+    border-radius: 5px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .8);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .3), 0 3px 0 rgba(0, 0, 0, .7), 0 2px 2px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .5) inset;   
+}
+
+nav a:hover {
+    background-color: #bb413b;
+    background-image: linear-gradient(#831608, #bb413b);
+}
+
+nav a:active {
+    background: #bb413b;
+    position: relative;
+    top: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .7) inset;
+}
+
+/* fin estilo para barra de menu */
+
+main {
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'Cabin';
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+table {
+    border-spacing: 1em;
+    font-size: 14px;
+}
+
+table label, table p {
+    color: azure;
+}
+
+table.botones {
+    empty-cells: show;
+    padding: 3px;
+}
+
+table.botones div.siguiente {
+    align-items: center;
+    position: fixed;
+    width: 50%;
+    left: 60%;
+    bottom: 0;
+}
+
+table.botones div.anterior {
+    align-items: center;
+    width: 50%;
+    position: fixed;
+    bottom: 0;
+    left: 5%;
+}
+
+div.buttons {
+    position: fixed;
+    bottom: 0;
+}
+/* estilo boton siguiente y anterior */
+
+#btnsiguiente, #btnanterior {
+    height: 1em;
+    padding:15px 30px;
+    cursor:pointer;
+    display:inline-block;
+    color:#fff;
+    font-size:18px;
+    border:1px solid #282828;
+    background:#282828;
+    border-radius:4px;
+    line-height:1em;
+    border:1px solid #aaa;
+    text-decoration:none;
+    text-align: center;
+    font-family: 'Cabin';
+
+    -webkit-transition: all 0.3s linear;
+     -khtml-transition: all 0.3s linear;
+       -moz-transition: all 0.3s linear;
+         -o-transition: all 0.3s linear;
+            transition: all 0.3s linear;
+
+    
+    
+    background: #ff3019; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #ff3019 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(top, #ff3019 0%,#cf0404 100%); /* W3C */
+}
+
+/* estilo formulario datos de facturacion */
+
+div.form_datos_factura form{
+    font-family: 'Cabin';
+	width: 350px;
+	min-height: 300px;
+	height: auto;
+	border-radius: 5px;
+	margin: 2% auto;
+	box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+	padding: 2%;
+	background-image: linear-gradient(-225deg, #940101 50%, #940101 50%);
+}
+
+div.form_datos_factura form div.conten {
+    display: -webkit-flex;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+div.form_datos_factura form input {
+    width: 240px;
+	height: 40px;
+	margin-top: 2%;
+	padding: 15px;
+	font-size: 16px;
+	font-family: 'Cabin';
+	color: #232324;
+	outline: none;
+	border: none;
+	border-radius: 0px 5px 5px 0px;
+	transition: 0.2s linear;
+}
+
+div.form_datos_factura form label {
+    display: block;
+    font-size: 20px;
+    position: relative;
+    color: #f8e1e1;
+    margin-top: 2%;
+}
+
+div.form_datos_factura form label.form_datafact {
+    display: block;
+    width: 100%;
+}
+
+div.form_datos_factura form input[type="radio"] {
+    width: 50px;
+    padding: 0%;
+    display: block;
+    left: 50%;
+}
+
+div.form_datos_factura form label[for] {
+    width: 250px;
+    left: 0%;
+}
+
+h2.titulo_form {
+    font-family: 'Cabin';
+    width: fit-content;
+    color: #ddd8d8;
+    margin: 0 auto;
+}
+
+div.cont_clientepedido {
+    width: fit-content;
+    margin: 0 auto;
+}
