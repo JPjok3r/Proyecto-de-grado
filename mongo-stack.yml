@@ -1,0 +1,15 @@
+# for running de file with docker compose exe: docker-compose -f mongo-stack.yml up --force-recreate --build
+version: "3.2"
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
